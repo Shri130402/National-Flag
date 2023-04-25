@@ -1,0 +1,140 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Reg Form</title>    
+    <style type="text/css">    
+        body{    
+            font-family: Calibri;    
+        }    
+        input[type="text"] {    
+            width: 250px;    
+        }    
+        input[type="submit"], input[type="reset"] {    
+            width: 77px;    
+            height: 27px;    
+            position: relative;left: 180px;    
+        }    
+        form{    
+            text-align: center;    
+            font-family: Calibri;    
+            font-size: 20px;    
+            border: 3px solid black;    
+            width: 600px;    
+            margin: 20px auto;    
+        }    
+        td {    
+            padding: 10px;    
+        }    
+        td:first-child {    
+            text-align: right;    
+            font-weight: bold;    
+        }    
+        td:last-child {    
+            text-align: left;    
+    
+    </style>    
+    <script>    
+        function validate() {    
+            var fname = document.reg_form.fname;    
+            var lname = document.reg_form.lname;    
+            var password = document.reg_form.password;    
+            var address = document.reg_form.address;    
+            var email = document.reg_form.email;    
+            var mobile = document.reg_form.mobile;    
+    
+            if(fname.value.length < 6){
+                alert("first name shouldn't be less than 6 char");
+                return false;
+            }
+
+            if (typeof fname.value !== "string") {
+                alert("Name must contain alphabets");
+                return false;
+            }
+            
+            
+            if (lname.value.length <= 0) {    
+                alert("Last Name is required");    
+       
+                return false;    
+            }    
+            if (password.value.length < 6) {    
+                alert("password should contain atleast 6 characters");       
+                return false;    
+            }    
+            if (address.value.length <= 0) {    
+                alert("Address is required");    
+                    
+                return false;    
+            }    
+            if (email.value.length <= 0) {    
+                alert("Email Id is required");    
+               
+                return false;    
+            }    
+            if (mobile.value.length <= 0) {    
+                alert("Mobile number is required");    
+        
+                return false;    
+            }    
+                
+            return false;    
+        }    
+    </script>    
+</head>    
+<body>    
+    <center><h1>Form Validation</h1></center>    
+    <hr>    
+    <form method="" action="" name="reg_form" onsubmit="return validate()">    
+        <h2>Registration Form</h2>    
+        <table>    
+            <tr>    
+                <td><label>First Name: </label></td>    
+                <td>    
+                    <input type="text" name="fname" placeholder="First Name">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Last Name: </label></td>    
+                <td>    
+                    <input type="text" name="lname" placeholder="Last Name">    
+                </td>    
+            </tr>  
+            <tr>    
+                <td><label>Password: </label></td>    
+                <td>    
+                    <input type="textarea" name="password" placeholder="Enter password">    
+                      
+                </td>    
+            </tr>   
+            <tr>    
+                <td><label>Address: </label></td>    
+                <td>    
+                    <input type="textarea" size="50" name="address" placeholder="Address">    
+                </td>    
+            </tr>    
+               
+            <tr>    
+                <td><label>Email Id: </label></td>    
+                <td>    
+                    <input type="text" name="email" placeholder="name@domain.com">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Mobile: </label></td>    
+                <td>    
+                    <input type="number" name="mobile">    
+                </td>    
+            </tr>    
+               
+            <tr>    
+                <td>    
+                    <input type="submit" name="submit" value="Submit">    
+                    <input type="reset" name="reset" value="Reset">    
+                </td>    
+            </tr>             
+        </table>    
+    </form>    
+</body>    
+</html>     
+        
